@@ -18,5 +18,9 @@
         android:id="@+id/fragment2"
         android:name="com.example.hw9_2.Fragment2"
         android:label="fragment_2"
-        tools:layout="@layout/fragment_2" />
+        tools:layout="@layout/fragment_2" >
+        <action
+            android:id="@+id/action_fragment2_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
 </navigation>
