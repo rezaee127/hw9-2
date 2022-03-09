@@ -1,10 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment2">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+    <TextView
+        app:cornerRadius="40dp"
+        android:id="@+id/textViewFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/shape"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="FullName"
+        android:minHeight="40dp"/>
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="UserName"
+        app:cornerRadius="20dp"
+        android:minHeight="40dp"/>
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="Email"
+        app:cornerRadius="20dp"
+        android:minHeight="40dp"/>
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="Password"
+        app:cornerRadius="20dp"
+        android:minHeight="40dp"/>
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:text="Gender"
+        app:cornerRadius="20dp"
+        android:minHeight="40dp"/>
 
-
-</FrameLayout>
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/purple_300"
+            android:text="Save"
+            android:textAllCaps="false"
+            app:cornerRadius="40dp"/>
+    </LinearLayout>
+</ScrollView>
