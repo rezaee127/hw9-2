@@ -2,15 +2,18 @@ package com.example.hw9_2
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.hw9_2.databinding.Fragment2Binding
 
+
 class Fragment2 : Fragment() {
+    private val args: Fragment2Args by navArgs()
 
     lateinit var  binding : Fragment2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +24,7 @@ class Fragment2 : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = Fragment2Binding.inflate (inflater, container, false)
 
@@ -38,11 +41,12 @@ class Fragment2 : Fragment() {
     }
 
     private fun initView() {
-        val fullName=requireArguments().getString("fullName")
-        val userName=requireArguments().getString("userName")
-        val email=requireArguments().getString("email")
-        val password=requireArguments().getString("password")
-        val gender=requireArguments().getString("gender")
+
+        val fullName=args.fullName
+        val userName=args.userName
+        val email=args.email
+        val password=args.password
+        val gender=args.gender
 
         binding.textViewFullName.text=fullName
         binding.textViewUserName.text=userName
@@ -51,7 +55,7 @@ class Fragment2 : Fragment() {
         binding.textViewGender.text=gender
 
         binding.buttonSave.setOnClickListener {
-            var pref = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
+            val pref = activity?.getSharedPreferences("share", Context.MODE_PRIVATE)
             val edit = pref?.edit()
             edit?.putString("FullName", fullName)
             edit?.putString("UserName", userName)

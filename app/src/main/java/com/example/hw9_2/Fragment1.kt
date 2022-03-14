@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.hw9_2.databinding.Fragment1Binding
 
@@ -77,14 +78,18 @@ class Fragment1 : Fragment() {
         val email = binding.editTextEmailAddress.text.toString()
         val password = binding.editTextPassword.text.toString()
 
+        val action = Fragment1Directions.actionFragment1ToFragment2(fullName, userName, email, password, gender)
+        findNavController().navigate(action)
 
-        val bundle = bundleOf(
+
+      /*  val bundle = bundleOf(
             "fullName" to fullName, "userName" to userName,
-            "email" to email, "password" to password, "gender" to gender
-        )
-
-
+            "email" to email, "password" to password, "gender" to gender)
         findNavController().navigate(R.id.action_fragment1_to_fragment2, bundle)
 
+       */
+
     }
+
+
 }
