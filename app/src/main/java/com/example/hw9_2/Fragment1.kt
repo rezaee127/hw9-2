@@ -2,6 +2,7 @@ package com.example.hw9_2
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -54,11 +55,13 @@ class Fragment1 : Fragment() {
                 binding.editTextUserName.error = "نام کاربری را وارد کنید"
             else if (binding.editTextEmailAddress.text.isBlank())
                 binding.editTextEmailAddress.error = "ایمیل را وارد کنید"
+            else if (!Patterns.EMAIL_ADDRESS.matcher(binding.editTextEmailAddress.text).matches())
+                binding.editTextEmailAddress.error ="ایمیل درست نیست"
             else if (binding.editTextPassword.text.isBlank())
                 binding.editTextPassword.error = "پسورد را وارد کنید"
-            else if (binding.editTextPassword.text.toString() != binding.editTextReTypePassword.text.toString()) {
+            else if (binding.editTextPassword.text.toString() != binding.editTextReTypePassword.text.toString())
                 binding.editTextReTypePassword.error = "پسوردهای وارد شده یکی نیستند"
-            } else if (!binding.Female.isChecked && !binding.Male.isChecked) {
+            else if (!binding.Female.isChecked && !binding.Male.isChecked) {
                 binding.Male.error = "یک گزینه را انتخاب کنید"
             } else {
                 if (binding.Female.isChecked) {
